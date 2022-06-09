@@ -1,17 +1,17 @@
 
 <p style="color: green"><%= notice %></p>
 
-<h1>Articles</h1>
+<h1>Blogs</h1>
 
 <div id="articles">
   <% @articles.each do |article| %>
     <%= render article %>
     <p>
-      <%= link_to "Show this article", article %>
+      <%= link_to "Show this Blog", article %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New article", new_article_path %>
+<%= link_to "New Blog", new_article_path %>
 <%= link_to "Back Search", search_path %>
 <%= button_to "logout", destroy_user_session_path, method: :delete  %>
