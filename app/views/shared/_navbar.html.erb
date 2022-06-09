@@ -1,0 +1,12 @@
+<nav class="navbar"  style="background-color: #74c0fc;">
+  <div class="container-fluid">
+    <%# <a class="navbar-brand">Navbar</a> %>
+    
+    <%= image_tag("car.png", :alt => "rss feed", :hight => "150px", :width => "150px") %> 
+    <div class="d-grid">
+      <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-success" %>
+    </div>
+  </div>
+</nav>
+
+     
