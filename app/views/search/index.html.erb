@@ -40,9 +40,16 @@
           <tbody>
           <% @articles.each do |article| %>
             <tr>
-              <td><%= link_to article.title, article %></td>
+              <%# <td><%= link_to article.title, article %>
+              <td><%= article.title.truncate_words(20) %></td>
               <td><%= article.body.truncate_words(30) %></td>
-              <td><%= link_to '', article, :turbo_confirm => 'Are you sure?', :turbo_method => :delete, class: "bi bi-trash3-fill" %>&ensp;&ensp;<%= link_to "", edit_article_path(article), class: "bi bi-pencil-fill" %></td>
+              <td>
+                <%= link_to "", article_path(article), class: "bi bi-trash3-fill", data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>&ensp;&ensp;<%= link_to "", edit_article_path(article), class: "bi bi-pencil-fill" %>
+              </td>
+            
             </tr>
           <% end %>    
           </tbody>
@@ -59,7 +66,7 @@
 </html>    
 
        
-       
+       <%# <%= link_to "", article, :date_confirm => "Are you sure?", :method => :delete, class: "bi bi-trash3-fill" %>
 
 <%# 
       <div class="row justify-content-center">
