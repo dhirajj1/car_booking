@@ -9,6 +9,7 @@ class SearchController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
 
+    flash[:success] = "The to-do item was successfully destroyed."
     redirect_to(articles_path)
   end
 
